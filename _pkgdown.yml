@@ -1,0 +1,16 @@
+destination: docs
+
+template:
+  params:
+  bootswatch: paper
+
+reference:
+  - title: Series
+    contents:
+      - '`fetch_series`'
+  - title: Datasets
+    contents:
+      - '`fetch_dataset`'
+  - title: Other
+    contents:
+      - '`set_apikey`'

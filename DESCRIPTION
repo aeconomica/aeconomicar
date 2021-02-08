@@ -1,0 +1,24 @@
+Package: aeconomicar
+Title: Fetch data from the Aeconomica API
+Version: 0.1.0
+Authors@R: 
+    person(given = "Aeconomica",
+           family = "",
+           role = c("aut", "cre"),
+           email = "aeconomica.info@gmail.com")
+Description: Fetch Australian economic data series and datasets from the aeconomica.io API.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+  stringr,
+  httr,
+  jsonlite,
+  dplyr,
+  purrr,
+  tibble
+Suggests:
+  testthat,
+  pkgdown,
+  covr
+RoxygenNote: 6.1.1
