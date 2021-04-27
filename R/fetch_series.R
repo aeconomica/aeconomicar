@@ -70,7 +70,7 @@ fetch_series <- function(series, vintage = "latest") {
         series_id = x$series_id,
         vintage = x$vintage,
         dates = unlist(x$dates),
-        values = unlist(x$values)
+        values = unlist(purrr::map(x$values, ~ ifelse(is.null(.x), NA_real_, .x)))
       )
     })
     return(purrr::reduce(res, dplyr::bind_rows))
