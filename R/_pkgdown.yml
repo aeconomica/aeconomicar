@@ -11,4 +11,5 @@ reference:
 - title: Fetching data
   contents:
   - '`fetch_series`'
+  - '`fetch_series_as_at`'
   - '`fetch_dataset`'

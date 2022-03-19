@@ -1,4 +1,5 @@
-#' Fetch a series, or list of series, of economic data from the Aeconomica API.
+#' Fetch a series, or list of series, of economic data from the Aeconomica API
+#' as that series was at some point in time.
 #'
 #' @param series A series, or number of series to fetch. Can be either a single
 #' series code, a vector of series codes, or a list of series codes and vintage
