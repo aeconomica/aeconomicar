@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,18 +33,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">aeconomicar</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.2</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -59,29 +55,29 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="aeconomicar" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#aeconomicar" class="anchor"></a>aeconomicar</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="aeconomicar">aeconomicar<a class="anchor" aria-label="anchor" href="#aeconomicar"></a>
+</h1></div>
 
-<p>aeconomicar provides quick and easy access to the <a href="https://aeconomica.io">Aeconomica</a> data API.</p>
-<p>To use this package, you will need to sign up for a free Aeconomica account to get an API key. You can find the API key in the <a href="https://aeconomica.io/account">account page</a> of your Aeconomica account.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<p>aeconomicar provides quick and easy access to the <a href="https://aeconomica.io" class="external-link">Aeconomica</a> data API.</p>
+<p>To use this package, you will need to sign up for a free Aeconomica account to get an API key. You can find the API key in the <a href="https://aeconomica.io/account" class="external-link">account page</a> of your Aeconomica account.</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>aeconomicar is not registered in CRAN. As such to install to the lastest release, run: <code>library(remotes) remotes::install_github("https://github.com/aeconomica/aeconomicar.git", ref = "stable")</code></p>
 <p>(Alternatively you can install the development version by removing the <code>ref = "stable"</code>)</p>
 </div>
-<div id="usage" class="section level2">
-<h2 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h2>
+<div class="section level2">
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h2>
 <p>To grab data for a series - e.g. the level of GDP - simply run (where “YOUR_API_KEY” is the API key from your Aeconomica account):</p>
-<pre><code><a href="https://rdrr.io/r/base/library.html">library(aeconomicar)
-set_apikey("YOUR_API_KEY")
-fetch_series("GDP")</a></code></pre>
+<pre><code><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">aeconomicar</span><span class="op">)</span>
+<span class="fu"><a href="reference/set_apikey.html">set_apikey</a></span><span class="op">(</span><span class="st">"YOUR_API_KEY"</span><span class="op">)</span>
+<span class="fu"><a href="reference/fetch_series.html">fetch_series</a></span><span class="op">(</span><span class="st">"GDP"</span><span class="op">)</span></code></pre>
 <p>To grab an entire dataset of series, and their dimensions - such as ABS weekly jobs by State - just run:</p>
-<pre><code><a href="https://rdrr.io/r/base/library.html">library(aeconomicar)
-set_apikey("YOUR_API_KEY")
-fetch_dataset("WJP_STATE")</a></code></pre>
+<pre><code><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">aeconomicar</span><span class="op">)</span>
+<span class="fu"><a href="reference/set_apikey.html">set_apikey</a></span><span class="op">(</span><span class="st">"YOUR_API_KEY"</span><span class="op">)</span>
+<span class="fu"><a href="reference/fetch_dataset.html">fetch_dataset</a></span><span class="op">(</span><span class="st">"WJP_STATE"</span><span class="op">)</span></code></pre>
 <p>In each case the series or dataset keys can be found by searching the Aeconomica website. When viewing a series or dataset, the key is shown in the top right. You can also click on the “R” button in the bottom left to get the code you need for the dataset you are viewing.</p>
 </div>
 </div>
@@ -89,38 +85,50 @@ fetch_dataset("WJP_STATE")</a></code></pre>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li>
-<a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
+<a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
 </li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing aeconomicar</a></li>
+</ul>
+</div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Aeconomica <br><small class="roles"> Author, maintainer </small>  </li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="http://codecov.io/github/aeconomica/aeconomicar?branch=master"><img src="http://codecov.io/github/aeconomica/aeconomicar/coverage.svg?branch=master" alt="codecov.io"></a></li>
-<li><a href="https://aeconomica.github.io/aeconomicar/stable"><img src="https://img.shields.io/badge/docs-stable-blue.svg" alt="Documentation"></a></li>
-<li><a href="https://aeconomica.github.io/aeconomicar/dev"><img src="https://img.shields.io/badge/docs-master-blue.svg" alt="Documentation"></a></li>
+<li><a href="http://codecov.io/github/aeconomica/aeconomicar?branch=main" class="external-link"><img src="http://codecov.io/github/aeconomica/aeconomicar/coverage.svg?branch=main" alt="codecov.io"></a></li>
+<li><a href="https://aeconomica.github.io/aeconomicar/stable" class="external-link"><img src="https://img.shields.io/badge/docs-stable-blue.svg" alt="Documentation"></a></li>
+<li><a href="https://aeconomica.github.io/aeconomicar/dev" class="external-link"><img src="https://img.shields.io/badge/docs-main-blue.svg" alt="Documentation"></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Aeconomica.</p>
+  <p></p>
+<p>Developed by Aeconomica.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>
@@ -128,6 +136,8 @@ fetch_dataset("WJP_STATE")</a></code></pre>
 
   
 
+
+  
 
   </body>
 </html>
