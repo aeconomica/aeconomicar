@@ -2,9 +2,9 @@
 
 ![Lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)
 ![CI](https://github.com/aeconomica/aeconomicar/workflows/CI/badge.svg)
-[![codecov.io](http://codecov.io/github/aeconomica/aeconomicar/coverage.svg?branch=master)](http://codecov.io/github/aeconomica/aeconomicar?branch=master)
+[![codecov.io](http://codecov.io/github/aeconomica/aeconomicar/coverage.svg?branch=main)](http://codecov.io/github/aeconomica/aeconomicar?branch=main)
 [![Documentation](https://img.shields.io/badge/docs-stable-blue.svg)](https://aeconomica.github.io/aeconomicar/stable)
-[![Documentation](https://img.shields.io/badge/docs-master-blue.svg)](https://aeconomica.github.io/aeconomicar/dev)
+[![Documentation](https://img.shields.io/badge/docs-main-blue.svg)](https://aeconomica.github.io/aeconomicar/dev)
 
 aeconomicar provides quick and easy access to the [Aeconomica](https://aeconomica.io) data API.
 

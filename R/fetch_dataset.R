@@ -47,22 +47,7 @@ fetch_dataset <- function(dataset_id, restrictions = list(), vintage = "latest",
 
   if (httr::status_code(res) == 200) {
     res <- httr::content(res)
-    res <- purrr::map(res, function(x) {
-      df <- tibble::tibble(
-        series_id = x$series_id,
-        vintage = x$vintage,
-        dates = unlist(x$dates),
-        values = unlist(x$values)
-      )
-
-      cols <- names(x)[!(names(x) %in% c("series_id", "vintage", "dates", "values"))]
-      for (c in cols) {
-        df[, c] <- x[[c]]
-      }
-
-      return(df)
-    })
-    res <- purrr::reduce(res, dplyr::bind_rows)
+    res <- purrr::map_dfc(res, function(col) unlist(purrr::map(col, ~ ifelse(is.null(.x), NA, .x))))
   } else {
     errmsg <- httr::content(res)[["error"]]
     if (substr(errmsg, 1,21) == "500 Internal Error - ") {

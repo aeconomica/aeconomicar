@@ -76,11 +76,15 @@ fetch_series <- function(series, vintage = "latest") {
     return(purrr::reduce(res, dplyr::bind_rows))
   } else {
     errmsg <- httr::content(res)[["error"]]
-    if (substr(errmsg, 1,21) == "500 Internal Error - ") {
+    if (is.character(errmsg) && substr(errmsg, 1, 21) == "500 Internal Error - ") {
       errmsg <- substr(errmsg, 22, nchar(errmsg))
       stop(errmsg, call. = TRUE)
     } else {
-      stop(errmsg, call. = TRUE)
+      if (is.list(errmsg) && ("message" %in% names(errmsg))) {
+        stop(errmsg[["message"]], call. = TRUE)
+      } else {
+        stop(errmsg, call. = TRUE)
+      }
     }
   }
 }

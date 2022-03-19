@@ -4,8 +4,12 @@
 \alias{fetch_dataset}
 \title{Fetch dataset with dataset_id `dataset_id`.}
 \usage{
-fetch_dataset(dataset_id, restrictions = list(), vintage = "latest",
-  dimensions = "code")
+fetch_dataset(
+  dataset_id,
+  restrictions = list(),
+  vintage = "latest",
+  dimensions = "code"
+)
 }
 \arguments{
 \item{dataset_id}{The dataset id you want to fetch. You can find dataset codes
