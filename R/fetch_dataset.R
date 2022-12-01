@@ -50,11 +50,19 @@ fetch_dataset <- function(dataset_id, restrictions = list(), vintage = "latest",
     res <- purrr::map_dfc(res, function(col) unlist(purrr::map(col, ~ ifelse(is.null(.x), NA, .x))))
   } else {
     errmsg <- httr::content(res)[["error"]]
-    if (substr(errmsg, 1,21) == "500 Internal Error - ") {
-      errmsg <- substr(errmsg, 22, nchar(errmsg))
+    if (httr::status_code(res) == 400) {
+      errmsg <- substr(errmsg, 19, nchar(errmsg))
       stop(errmsg, call. = TRUE)
+    } else if (httr::status_code(res) == 401) {
+      stop("Authorization required. Did you forget to provide an API key?")
+    } else if (httr::status_code(res) == 403) {
+      stop("Unauthorized. Check your API key and try again, or you may not have permissions for the requested resource.")
     } else {
-      stop(errmsg, call. = TRUE)
+      if (is.list(errmsg) && ("message" %in% names(errmsg))) {
+        stop(errmsg[["message"]], call. = TRUE)
+      } else {
+        stop(errmsg, call. = TRUE)
+      }
     }
   }
 
@@ -83,13 +91,20 @@ fetch_dataset <- function(dataset_id, restrictions = list(), vintage = "latest",
       return(res)
     } else {
       errmsg <- httr::content(structure)[["error"]]
-      if (substr(errmsg, 1,21) == "500 Internal Error - ") {
-        errmsg <- substr(errmsg, 22, nchar(errmsg))
+      if (httr::status_code(res) == 400) {
+        errmsg <- substr(errmsg, 19, nchar(errmsg))
         stop(errmsg, call. = TRUE)
+      } else if (httr::status_code(res) == 401) {
+        stop("Authorization required. Did you forget to provide an API key?")
+      } else if (httr::status_code(res) == 403) {
+        stop("Unauthorized. Check your API key and try again, or you may not have permissions for the requested resource.")
       } else {
-        stop(errmsg, call. = TRUE)
+        if (is.list(errmsg) && ("message" %in% names(errmsg))) {
+          stop(errmsg[["message"]], call. = TRUE)
+        } else {
+          stop(errmsg, call. = TRUE)
+        }
       }
     }
-
   }
 }

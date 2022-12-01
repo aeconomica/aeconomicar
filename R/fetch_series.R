@@ -66,7 +66,7 @@ fetch_series <- function(series, vintage = "latest") {
   if (httr::status_code(res) == 200) {
     res <- httr::content(res)
     res <- purrr::map(res, function(x) {
-      df <- tibble::tibble(
+      tibble::tibble(
         series_id = x$series_id,
         vintage = x$vintage,
         dates = unlist(x$dates),
@@ -76,9 +76,13 @@ fetch_series <- function(series, vintage = "latest") {
     return(purrr::reduce(res, dplyr::bind_rows))
   } else {
     errmsg <- httr::content(res)[["error"]]
-    if (is.character(errmsg) && substr(errmsg, 1, 21) == "500 Internal Error - ") {
-      errmsg <- substr(errmsg, 22, nchar(errmsg))
+    if (httr::status_code(res) == 400) {
+      errmsg <- substr(errmsg, 19, nchar(errmsg))
       stop(errmsg, call. = TRUE)
+    } else if (httr::status_code(res) == 401) {
+      stop("Authorization required. Did you forget to provide an API key?")
+    } else if (httr::status_code(res) == 403) {
+      stop("Unauthorized. Check your API key and try again, or you may not have permissions for the requested resource.")
     } else {
       if (is.list(errmsg) && ("message" %in% names(errmsg))) {
         stop(errmsg[["message"]], call. = TRUE)
