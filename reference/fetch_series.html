@@ -44,7 +44,7 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">fetch_series</span><span class="op">(</span><span class="va">series</span>, vintage <span class="op">=</span> <span class="st">"latest"</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">fetch_series</span><span class="op">(</span><span class="va">series</span>, vintage <span class="op">=</span> <span class="st">"latest"</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -55,26 +55,29 @@ series code, a vector of series codes, or a list of series codes and vintage
 pairs (with the series code as the name and the vintage as the value). You
 can find series codes on the Aeconomica website in the top right of the page
 showing the series.</p></dd>
+
+
 <dt>vintage</dt>
 <dd><p>(optional) Specify a vintage for all of the series you want
 to fetch. Cannot be used if your specify vintages for individual series.
 Vintage can be any of `current` (alias `latest`, default), `previous` or a
 date in YYYY-MM-DD form.</p></dd>
+
 </dl></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="co"># Downloading a single series</span></span>
-<span class="r-in"><span class="fu">fetch_series</span><span class="op">(</span><span class="st">"WPI"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Downloading a number of series</span></span>
-<span class="r-in"><span class="fu">fetch_series</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"GDP_YE"</span>, <span class="st">"CPI_YE"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Use a list to download a different series with different vintages</span></span>
-<span class="r-in"><span class="fu">fetch_series</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"GDP_YE"</span> <span class="op">=</span> <span class="st">"latest"</span>, <span class="st">"CPI_YE"</span> <span class="op">=</span> <span class="st">"previous"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="co"># Downloading a single series</span></span></span>
+<span class="r-in"><span><span class="fu">fetch_series</span><span class="op">(</span><span class="st">"WPI"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Downloading a number of series</span></span></span>
+<span class="r-in"><span><span class="fu">fetch_series</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"GDP_YE"</span>, <span class="st">"CPI_YE"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Use a list to download a different series with different vintages</span></span></span>
+<span class="r-in"><span><span class="fu">fetch_series</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"GDP_YE"</span> <span class="op">=</span> <span class="st">"latest"</span>, <span class="st">"CPI_YE"</span> <span class="op">=</span> <span class="st">"previous"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -89,7 +92,7 @@ date in YYYY-MM-DD form.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>
