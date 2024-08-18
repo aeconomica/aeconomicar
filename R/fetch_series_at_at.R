@@ -59,12 +59,12 @@ fetch_series_as_at <- function(series, as_at_date) {
   res <- httr::POST(
     "https://aeconomica.io/api/v1/fetchseries",
     encode = "json",
+    httr::add_headers(`Authorization` = paste0('Bearer ', apikey())),
     body = paste0(
       "{
       \"series\": [
         ", series_req, "
-      ],
-      \"apikey\" : \"", apikey(), "\" }"
+      ]}"
     )
   )
 

@@ -15,10 +15,8 @@ Aeconomica account.
 aeconomicar is not registered in CRAN. As such to install to the lastest release, run:
   ```
 library(remotes)
-remotes::install_github("https://github.com/aeconomica/aeconomicar.git", ref = "stable")
+remotes::install_github("https://github.com/aeconomica/aeconomicar.git")
 ```
-
-(Alternatively you can install the development version by removing the `ref = "stable"`)
 
 ## Usage
 

@@ -36,12 +36,12 @@ fetch_dataset <- function(dataset_id, restrictions = list(), vintage = "latest",
   res <- httr::POST(
     "https://aeconomica.io//api/v1/dataset",
     encode = "json",
+    httr::add_headers(`Authorization` = paste0('Bearer ', apikey())),
     body = paste0(
       "{
       \"dataset\": \"", dataset_id, "\",
         ", restrictions_string, "
-      \"vintage\" : \"", vintage,"\",
-      \"apikey\" : \"", apikey(), "\" }"
+      \"vintage\" : \"", vintage,"\"}"
     )
   )
 
@@ -72,10 +72,10 @@ fetch_dataset <- function(dataset_id, restrictions = list(), vintage = "latest",
     structure <- httr::POST(
       "https://aeconomica.io//api/v1/dataset_structure",
       encode = "json",
+      httr::add_headers(`Authorization` = paste0('Bearer ', apikey())),
       body = paste0(
         "{
-          \"dataset\": \"", dataset_id, "\",
-          \"apikey\" : \"", apikey(), "\" }"
+          \"dataset\": \"", dataset_id, "\"}"
       )
     )
     if (httr::status_code(structure) == 200) {

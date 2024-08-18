@@ -3,3 +3,4 @@
 .github
 .lintr
 _pkgdown.yml
+.vscode

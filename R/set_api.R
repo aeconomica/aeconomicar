@@ -9,6 +9,11 @@ apikey <- function() {
 #' Set API key to access Aeconomica API
 #'
 #' Visit your Aeconomica account page to find your API key.
+#' 
+#' Alternatively, you can set the environmental variable `AECONOMICA_APIKEY`, which will
+#' be loaded at package load time.
+#' 
+#' You can overwrite this key at anytime by calling `set_apikey` again.
 #'
 #' @param apikey The API key for your Aeconomica account.
 #'
