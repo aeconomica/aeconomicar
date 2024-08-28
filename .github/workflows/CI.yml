@@ -58,7 +58,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: r-lib/actions/setup-pandoc@v1
+      - uses: r-lib/actions/setup-pandoc@v2
 
       - name: Install binary dependencies
         run: sudo apt-get install libcurl4-openssl-dev libharfbuzz-dev libharfbuzz-dev libfribidi-dev
